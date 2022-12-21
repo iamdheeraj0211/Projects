@@ -5,11 +5,11 @@ urlpatterns = [
 
     path("register/", Registerview.as_view()),
 
-    path("std1/", ListStudentViewset.as_view()),
-    path("std1/<int:pk>", GetStudentViewset.as_view()),
+    # path("std1/", ListStudentViewset.as_view()),
+    # path("std1/<int:pk>", GetStudentViewset.as_view()),
 
-    path("std/", CreateStudentViewset.as_view()),
-    path("std/<int:pk>", StudentViewset.as_view()),
+    # path("std/", CreateStudentViewset.as_view()),
+    # path("std/<int:pk>", StudentViewset.as_view()),
 
 
 

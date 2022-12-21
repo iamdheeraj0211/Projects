@@ -16,13 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-# from stdapp.views import StudentViewset
+from stdapp.views import StudentViewset1
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView, TokenVerifyView
 
-# router = routers.DefaultRouter()
-# router.register("stdapi", StudentViewset)
+router = routers.DefaultRouter()
+router.register("stdapi", StudentViewset1)
+
 # router1 = routers.DefaultRouter()
 # router1.register("su", SignupView)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", include("stdapp.urls")),
@@ -34,4 +36,4 @@ urlpatterns = [
 
 
 ]
-# urlpatterns += router.urls
+urlpatterns += router.urls

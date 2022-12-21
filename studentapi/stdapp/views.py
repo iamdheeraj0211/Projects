@@ -22,29 +22,35 @@ class Registerview(generics.CreateAPIView):
     permission_classes = (AllowAny,)
 
 
-class ListStudentViewset(generics.ListAPIView):
+class StudentViewset1(viewsets.ModelViewSet):
     queryset = Student.objects.all()
     serializer_class = StudentSerializer
-    # authentication_classes = [JWTAuthentication]
-    # permission_classes = [IsStudent | IsSuperUser | IsTeacher]
+    authentication_classes = [JWTAuthentication]
+    permission_classes = [IsTeacher | IsSuperUser | IsStudent]
+
+# class ListStudentViewset(generics.ListAPIView):
+#     queryset = Student.objects.all()
+#     serializer_class = StudentSerializer
+#     # authentication_classes = [JWTAuthentication]
+#     # permission_classes = [IsStudent | IsSuperUser | IsTeacher]
 
 
-class GetStudentViewset(generics.RetrieveAPIView):
-    queryset = Student.objects.all()
-    serializer_class = StudentSerializer
-    # authentication_classes = [JWTAuthentication]
-    # permission_classes = [IsSuperUser | IsStudent | IsTeacher]
+# class GetStudentViewset(generics.RetrieveAPIView):
+#     queryset = Student.objects.all()
+#     serializer_class = StudentSerializer
+#     # authentication_classes = [JWTAuthentication]
+#     # permission_classes = [IsSuperUser | IsStudent | IsTeacher]
 
 
-class CreateStudentViewset(generics.ListCreateAPIView):
-    queryset = Student.objects.all()
-    serializer_class = StudentSerializer
-    # authentication_classes = [JWTAuthentication]
-    # permission_classes = [IsSuperUser]
+# class CreateStudentViewset(generics.ListCreateAPIView):
+#     queryset = Student.objects.all()
+#     serializer_class = StudentSerializer
+#     # authentication_classes = [JWTAuthentication]
+#     # permission_classes = [IsSuperUser]
 
 
-class StudentViewset(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Student.objects.all()
-    serializer_class = StudentSerializer
-    # authentication_classes = [JWTAuthentication]
-    # permission_classes = [IsTeacher | IsSuperUser]
+# class StudentViewset(generics.RetrieveUpdateDestroyAPIView):
+#     queryset = Student.objects.all()
+#     serializer_class = StudentSerializer
+#     # authentication_classes = [JWTAuthentication]
+#     # permission_classes = [IsTeacher | IsSuperUser]
